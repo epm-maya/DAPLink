@@ -15,6 +15,7 @@ COMPILER_ASSERT(DAPLINK_HIC_ID == DAPLINK_HIC_ID_LPC11U35);
 #define PULL_DOWN_ENABLED               (1 << 3)
 #define PULL_UP_ENABLED                 (2 << 3)
 #define OPENDRAIN                       (1 << 10)
+#define DIGITAL_FUNCTION                (1 << 7)
 
 /* ae-lpc11u35-mb LED PIO0_7 */
 
@@ -37,7 +38,7 @@ COMPILER_ASSERT(DAPLINK_HIC_ID == DAPLINK_HIC_ID_LPC11U35);
 #define PIN_CDC_LED_BIT                 21
 #define PIN_CDC_LED                     (1 << PIN_CDC_LED_BIT)
 #define PIN_CDC_LED_IOCON               LPC_IOCON->PIO0_21
-#define PIN_CDC_LED_IOCON_INIT          (FUNC_1 | PULL_UP_ENABLED)
+#define PIN_CDC_LED_IOCON_INIT          (FUNC_0 | PULL_UP_ENABLED)
 
 /* */
 
@@ -64,35 +65,35 @@ COMPILER_ASSERT(DAPLINK_HIC_ID == DAPLINK_HIC_ID_LPC11U35);
 #define PIN_nRESET_BIT                  22
 #define PIN_nRESET                      (1 << PIN_nRESET_BIT)
 #define PIN_nRESET_IOCON                LPC_IOCON->PIO0_22
-#define PIN_nRESET_IOCON_INIT           (FUNC_0 | OPENDRAIN | PULL_UP_ENABLED)
+#define PIN_nRESET_IOCON_INIT           (FUNC_0 | OPENDRAIN | PULL_UP_ENABLED | DIGITAL_FUNCTION)
 
 // SWCLK/TCK Pin                        PIO0_11
 #define PIN_SWCLK_PORT                  0
 #define PIN_SWCLK_BIT                   11
 #define PIN_SWCLK                       (1 << PIN_SWCLK_BIT)
 #define PIN_SWCLK_TCK_IOCON             LPC_IOCON->TDI_PIO0_11
-#define PIN_SWCLK_TCK_IOCON_INIT        (FUNC_0 | PULL_UP_ENABLED)
+#define PIN_SWCLK_TCK_IOCON_INIT        (FUNC_1 | PULL_UP_ENABLED | DIGITAL_FUNCTION)
 
 // SWDIO/TMS In/Out Pin                 PIO0_12
 #define PIN_SWDIO_PORT                  0
 #define PIN_SWDIO_BIT                   12
 #define PIN_SWDIO                       (1 << PIN_SWDIO_BIT)
 #define PIN_SWDIO_TMS_IOCON             LPC_IOCON->TMS_PIO0_12
-#define PIN_SWDIO_TMS_IOCON_INIT        (FUNC_0 | PULL_UP_ENABLED)
+#define PIN_SWDIO_TMS_IOCON_INIT        (FUNC_1 | PULL_UP_ENABLED | DIGITAL_FUNCTION)
 
 // TDI Pin                              PIO0_13
 #define PIN_TDI_PORT                    0
 #define PIN_TDI_BIT                     13
 #define PIN_TDI                         (1 << PIN_TDI_BIT)
 #define PIN_TDI_IOCON                   LPC_IOCON->TDO_PIO0_13
-#define PIN_TDI_IOCON_INIT              (FUNC_0 | PULL_UP_ENABLED)
+#define PIN_TDI_IOCON_INIT              (FUNC_1 | PULL_UP_ENABLED | DIGITAL_FUNCTION)
 
 // SWO/TDO Pin                          PIO0_14
 #define PIN_TDO_PORT                    0
 #define PIN_TDO_BIT                     14
 #define PIN_TDO                         (1 << PIN_TDO_BIT)
 #define PIN_TDO_IOCON                   LPC_IOCON->TRST_PIO0_14
-#define PIN_TDO_IOCON_INIT              (FUNC_0 | PULL_UP_ENABLED)
+#define PIN_TDO_IOCON_INIT              (FUNC_1 | PULL_UP_ENABLED | DIGITAL_FUNCTION)
 
 /* ae-lpc11u35-mb */
 
